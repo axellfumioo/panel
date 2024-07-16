@@ -133,18 +133,19 @@
                             <!-- this row will not appear when printing -->
                             <div class="row no-print">
                                 <div class="col-12">
-                                    <button :disabled="(!payment_method || clicked) && {{ !$productIsFree }}"
-                                        :class="(!payment_method || clicked) && {{ !$productIsFree }} ? 'disabled' : ''"
-                                        class="btn btn-success float-right"><i class="far fa-credit-card mr-2"
-                                            @click="clicked = true"></i>
-                                        @if ($productIsFree)
-                                            {{ __('Get for free') }}
-                                        @else
-                                            {{ __('Submit Payment') }}
-                                        @endif
+                                    <button :disabled="(!payment_method || clicked) && <?php echo !$productIsFree; ?>"
+                                        :class="(!payment_method || clicked) && <?php echo !$productIsFree; ?> ? 'disabled' : ''"
+                                        class="btn btn-success float-right" @click="clicked = true">
+                                        <i class="far fa-credit-card mr-2"></i>
+                                        <?php if ($productIsFree): ?>
+                                        {{ __('Get for free') }}
+                                        <?php else: ?>
+                                        {{ __('Submit Payment') }}
+                                        <?php endif; ?>
                                     </button>
                                 </div>
                             </div>
+
                         </div>
                     </form>
                     <!-- /.invoice -->

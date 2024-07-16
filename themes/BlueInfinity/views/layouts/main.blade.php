@@ -234,7 +234,7 @@
                         (config('SETTINGS::PAYMENTS:PAYPAL:SECRET') && config('SETTINGS::PAYMENTS:PAYPAL:CLIENT_ID')) ||
                         (config('SETTINGS::PAYMENTS:STRIPE:SECRET') &&
                             config('SETTINGS::PAYMENTS:STRIPE:ENDPOINT_SECRET') &&
-                            config('SETTINGS::PAYMENTS:STRIPE:METHODS')))
+                            config('SETTINGS::PAYMENTS:STRIPE:METHODS'  && config('SETTINGS::PAYMENTS:TRIPAY:API_KEY') && config('SETTINGS::PAYMENTS:TRIPAY:PRIVATE_KEY') && config('SETTINGS::PAYMENTS:TRIPAY:MERCHANT_CODE'))))
                         <li class="nav-item">
                             <a href="{{ route('store.index') }}"
                                class="nav-link @if (Request::routeIs('store.*') || Request::routeIs('checkout')) active @endif">

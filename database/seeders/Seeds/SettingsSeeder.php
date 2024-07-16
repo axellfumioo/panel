@@ -323,6 +323,27 @@ class SettingsSeeder extends Seeder
             'type' => 'string',
             'description' => 'Comma seperated list of payment methods that are enabled (https://stripe.com/docs/payments/payment-methods/integration-options).',
         ]);
+        Settings::firstOrCreate([
+            'key' => 'SETTINGS::PAYMENTS:TRIPAY:API_KEY',
+        ], [
+            'value' => env('TRIPAY_API_KEY', ''),
+            'type' => 'string',
+            'description' => 'Your Tripay Api Key.',
+        ]);
+        Settings::firstOrCreate([
+            'key' => 'SETTINGS::PAYMENTS:TRIPAY:PRIVATE_KEY',
+        ], [
+            'value' => env('TRIPAY_PRIVATE_KEY', ''),
+            'type' => 'string',
+            'description' => 'Your Tripay Private Key.',
+        ]);
+        Settings::firstOrCreate([
+            'key' => 'SETTINGS::PAYMENTS:TRIPAY:MERCHANT_CODE',
+        ], [
+            'value' => env('TRIPAY_MERCHANT_CODE', ''),
+            'type' => 'string',
+            'description' => 'Your Tripay Merchant Code.',
+        ]);
 
         Settings::firstOrCreate([
             'key' => 'SETTINGS::DISCORD:CLIENT_ID',

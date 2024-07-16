@@ -15,7 +15,7 @@ class StoreController extends Controller
         if (
             env('APP_ENV') == 'local' ||
             config('SETTINGS::PAYMENTS:PAYPAL:SECRET') && config('SETTINGS::PAYMENTS:PAYPAL:CLIENT_ID') ||
-            config('SETTINGS::PAYMENTS:STRIPE:SECRET') && config('SETTINGS::PAYMENTS:STRIPE:ENDPOINT_SECRET') && config('SETTINGS::PAYMENTS:STRIPE:METHODS')
+            config('SETTINGS::PAYMENTS:STRIPE:SECRET') && config('SETTINGS::PAYMENTS:STRIPE:ENDPOINT_SECRET') && config('SETTINGS::PAYMENTS:STRIPE:METHODS') && config('SETTINGS::PAYMENTS:TRIPAY:API_KEY') && config('SETTINGS::PAYMENTS:TRIPAY:PRIVATE_KEY') && config('SETTINGS::PAYMENTS:TRIPAY:MERCHANT_CODE')
         ) {
             $isPaymentSetup = true;
         }

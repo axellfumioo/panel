@@ -26,7 +26,8 @@ return [
      * subsequently passed through.
      */
     'proxies' => in_array(env('TRUSTED_PROXIES', []), ['*', '**']) ?
-        env('TRUSTED_PROXIES') : explode(',', env('TRUSTED_PROXIES', null)),
+    env('TRUSTED_PROXIES') : explode(',', env('TRUSTED_PROXIES') ?? ''),
+
 
     /*
      * Or, to trust all proxies that connect

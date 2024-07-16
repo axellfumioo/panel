@@ -118,21 +118,47 @@
             <div class="col-md-3 px-3">
                 <div class="row mb-2">
                     <div class="col text-center">
-                        <h1>Other</h1>
+                        <h1>TriPay</h1>
                     </div>
                 </div>
-                <!-- Tax -->
+                <!-- Tripay -->
                 <div class="form-group mb-3">
                     <div class="custom-control p-0">
                         <div class="col m-0 p-0 d-flex justify-content-between align-items-center">
-                            <label for="sales-tax">{{ __('Tax Value in %') }}:</label>
+                            <label for="sales-tax">{{ __('Tripay Api Key') }}:</label>
                             <i data-toggle="popover" data-trigger="hover" data-html="true"
                                 data-content="Tax Value that will be added to the total price of the order. <br><br> Example: 19 results in (19%)"
                                 class="fas fa-info-circle"></i>
                         </div>
-                        <input x-model="sales-tax" id="sales-tax" name="sales-tax" type="number" step="0.01" min="0" max="99999999"
-                            value="{{ config('SETTINGS::PAYMENTS:SALES_TAX') }}"
-                            class="form-control @error('sales-tax') is-invalid @enderror">
+                        <input x-model="tripay-api-key" id="tripay-api-key" name="tripay-api-key" type="text"
+                            value="{{ config('SETTINGS::PAYMENTS:TRIPAY:API_KEY') }}"
+                            class="form-control @error('tripay-api-key') is-invalid @enderror">
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <div class="custom-control p-0">
+                        <div class="col m-0 p-0 d-flex justify-content-between align-items-center">
+                            <label for="sales-tax">{{ __('Tripay Private Key') }}:</label>
+                            <i data-toggle="popover" data-trigger="hover" data-html="true"
+                                data-content="Tax Value that will be added to the total price of the order. <br><br> Example: 19 results in (19%)"
+                                class="fas fa-info-circle"></i>
+                        </div>
+                        <input x-model="tripay-private-key" id="tripay-private-key" name="tripay-private-key" type="text"
+                            value="{{ config('SETTINGS::PAYMENTS:TRIPAY:PRIVATE_KEY') }}"
+                            class="form-control @error('tripay-private-key') is-invalid @enderror">
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <div class="custom-control p-0">
+                        <div class="col m-0 p-0 d-flex justify-content-between align-items-center">
+                            <label for="sales-tax">{{ __('Tripay Merchant Code') }}:</label>
+                            <i data-toggle="popover" data-trigger="hover" data-html="true"
+                                data-content="Tax Value that will be added to the total price of the order. <br><br> Example: 19 results in (19%)"
+                                class="fas fa-info-circle"></i>
+                        </div>
+                        <input x-model="tripay-merchant-code" id="tripay-merchant-code" name="tripay-merchant-code" type="text"
+                            value="{{ config('SETTINGS::PAYMENTS:TRIPAY:MERCHANT_CODE') }}"
+                            class="form-control @error('tripay-merchant-code') is-invalid @enderror">
                     </div>
                 </div>
             </div>
